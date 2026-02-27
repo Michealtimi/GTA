@@ -7,14 +7,23 @@ import VehicleGarage from '@/components/vehicle-garage';
 import { Footer } from '@/components/footer';
 
 export const metadata: Metadata = {
-	title: 'GTA VI - Vice City Navigator',
+	title: 'GTA VI PC Requirements & Interactive Map | November 2026 Countdown',
 	description:
-		'Explore Vice City, audit your PC specs, and discover the perfect vehicles for your mission',
-	keywords: ['GTA VI', 'Vice City', 'Navigator', 'Gaming', 'PC Audit'],
+		'Prepare for GTA VI: Explore Leonida, check PC specs, and countdown to the November 2026 launch. Get hardware tips and map insights.',
+	keywords: [
+		'GTA VI',
+		'Vice City',
+		'Leonida',
+		'PC Requirements',
+		'Interactive Map',
+		'Countdown',
+		'Gaming',
+		'Hardware',
+	],
 	openGraph: {
-		title: 'GTA VI - Vice City Navigator',
+		title: 'GTA VI PC Requirements & Interactive Map | November 2026 Countdown',
 		description:
-			'Explore Vice City, audit your PC specs, and discover the perfect vehicles for your mission',
+			'Prepare for GTA VI: Explore Leonida, check PC specs, and countdown to the November 2026 launch. Get hardware tips and map insights.',
 		type: 'website',
 	},
 };
@@ -73,6 +82,18 @@ export default function Page() {
 							zIndex: 0,
 						}}
 					/>
+					{/* Black opacity overlay for Hero section */}
+					<div
+						style={{
+							position: 'absolute',
+							top: 0,
+							left: 0,
+							width: '100%',
+							height: '100%',
+							background: 'rgba(0,0,0,0.35)',
+							zIndex: 1,
+						}}
+					/>
 					<div style={{ position: 'relative', zIndex: 1 }}>
 						<Hero />
 					</div>
@@ -92,6 +113,9 @@ export default function Page() {
 				<section id='garage'>
 					<VehicleGarage />
 				</section>
+
+				{/* SEO Content Section */}
+				{/* <SEOContent /> */}
 
 				{/* Footer */}
 				<Footer />

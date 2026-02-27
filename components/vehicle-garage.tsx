@@ -5,7 +5,6 @@ import { useToast } from '@/hooks/use-toast';
 import { motion } from 'framer-motion';
 import { Vehicle } from '@/lib/vehicles';
 import { fetchVehicles } from '@/lib/fetchVehicles';
-import Image from 'next/image';
 import { Search } from 'lucide-react';
 
 export default function VehicleGarage() {
@@ -79,9 +78,74 @@ export default function VehicleGarage() {
 			id='garage'
 			className='relative py-20 px-6'
 		>
+			<div className='adspace-top mb-8 flex justify-center'>
+				{/* AdSense script goes here */}
+				<div
+					id='adsense-top'
+					style={{ minHeight: 90, minWidth: 728 }}
+				/>
+			</div>
+
+			<section className='about-leonida mt-16 bg-background rounded-lg p-6 shadow-lg'>
+				<h2 className='text-3xl font-bold mb-4'>
+					About Leonida: GTA VI, Hardware Requirements & Vice City
+					History
+				</h2>
+				<article className='prose w-full text-muted-foreground'>
+					{/* About Leonida, Hardware Requirements & Vice City History */}
+					Grand Theft Auto VI (GTA VI) is the latest installment in
+					Rockstar Games' iconic open-world series, set in the vibrant
+					city of Leonida—a fictional reimagining of Vice City. The
+					game promises a massive leap in realism, storytelling, and
+					gameplay mechanics, pushing the boundaries of what players
+					expect from the franchise. Leonida is a sprawling metropolis
+					inspired by Miami, featuring neon-lit streets, bustling
+					beaches, and a rich cultural tapestry that immerses players
+					in a world of crime, ambition, and adventure. The hardware
+					requirements for GTA VI reflect its ambitious scope. To
+					fully experience the game, players will need a modern gaming
+					PC or console. Recommended specs include an Intel Core i7 or
+					AMD Ryzen 7 processor, 16GB RAM, and a graphics card such as
+					the NVIDIA RTX 5070 or AMD Radeon RX 8800 XT. Storage
+					requirements are substantial, with at least 200GB of free
+					space suggested on an NVMe SSD. These specs ensure smooth
+					gameplay, high-resolution textures, and advanced effects
+					like ray tracing, dynamic weather, and realistic NPC
+					behavior. For consoles, the game is optimized for
+					PlayStation 5 Pro and the 2026 Xbox refreshes, leveraging
+					their powerful GPUs for seamless exploration. Vice City,
+					first introduced in 2002, has a storied history within the
+					Grand Theft Auto universe. The city is known for its pastel
+					colors, retro vibes, and a soundtrack that captures the
+					essence of the coast. Over the years, Vice City has evolved
+					from a pixelated playground to a fully realized urban
+					landscape. GTA VI's Leonida builds on this legacy, offering
+					new districts, expanded lore, and deeper character
+					interactions. Players can expect to revisit iconic
+					locations, meet familiar faces, and uncover secrets that
+					connect the neon past to the hyper-realistic present
+					narrative. Beyond its technical achievements, GTA VI is
+					celebrated for its attention to detail. The development team
+					spent years researching Leonida's architecture and culture
+					to create a city that feels alive. From the sun-soaked
+					boardwalks to the gritty inner neighborhoods, Leonida is a
+					playground for both new and veteran players. The game
+					introduces innovative features such as dynamic police
+					responses, evolving criminal networks, and a branching
+					storyline. These elements ensure that every playthrough is
+					unique, rewarding exploration and experimentation in the
+					most advanced open world ever created.
+				</article>
+			</section>
+			<div className='adspace-bottom mt-8 flex justify-center'>
+				{/* AdSense script goes here */}
+				<div
+					id='adsense-bottom'
+					style={{ minHeight: 90, minWidth: 728 }}
+				/>
+			</div>
 			<div className='absolute inset-0 grid-pattern opacity-10' />
 			<div className='absolute inset-0 scan-lines opacity-20' />
-
 			<div className='max-w-6xl mx-auto relative z-10'>
 				{/* Section title */}
 				<motion.div
@@ -184,14 +248,15 @@ export default function VehicleGarage() {
 										<div className='absolute inset-0 bg-linear-to-t from-black/50 to-transparent' />
 									</div>
 									<div className='absolute right-2 top-2 w-24 h-16 rounded shadow-lg overflow-hidden z-10'>
-										<Image
-											src={`/vehicles/${vehicle.id}.jpg`}
+										<img
+											src={vehicle.image}
 											alt={vehicle.name}
-											fill
-											style={{ objectFit: 'cover' }}
-											sizes='96px'
-											className='rounded'
-											priority={index < 6}
+											referrerPolicy='no-referrer'
+											className='rounded w-full h-full object-cover'
+											style={{
+												width: '100%',
+												height: '100%',
+											}}
 										/>
 									</div>
 									<div className='relative z-20'>
@@ -369,14 +434,15 @@ export default function VehicleGarage() {
 							>
 								<div className='absolute inset-0 bg-linear-to-t from-black/60 to-transparent' />
 								<div className='absolute right-4 top-4 w-40 h-28 rounded shadow-lg overflow-hidden z-10'>
-									<Image
-										src={`/vehicles/${selectedVehicle.id}.jpg`}
+									<img
+										src={selectedVehicle.image}
 										alt={selectedVehicle.name}
-										fill
-										style={{ objectFit: 'cover' }}
-										sizes='160px'
-										className='rounded'
-										priority
+										referrerPolicy='no-referrer'
+										className='rounded w-full h-full object-cover'
+										style={{
+											width: '100%',
+											height: '100%',
+										}}
 									/>
 								</div>
 								<div className='relative z-20'>

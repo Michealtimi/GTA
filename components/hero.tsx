@@ -93,22 +93,18 @@ const Hero = () => {
 				initial='hidden'
 				animate='visible'
 			>
-				{/* Animated Countdown */}
-				<motion.div
-					variants={flipVariants}
-					className='mb-8 flex justify-center'
-				>
-					<Countdown />
-				</motion.div>
-
-				{/* Main heading */}
+				{/* Main heading and subtitle above timers */}
 				<motion.h1
 					variants={itemVariants}
 					className='text-6xl md:text-7xl font-bold mb-6'
 				>
 					<span
 						className='text-glow'
-						style={{ color: 'var(--neon-pink)' }}
+						style={{
+							color: 'var(--neon-pink)',
+							textShadow:
+								'0 0 5px #fff, 0 0 10px #fff, 0 0 20px var(--neon-pink)',
+						}}
 					>
 						GTA VI
 					</span>
@@ -116,14 +112,37 @@ const Hero = () => {
 					<span className='text-foreground'>Vice City Navigator</span>
 				</motion.h1>
 
-				{/* Subtitle */}
 				<motion.p
 					variants={itemVariants}
-					className='text-xl md:text-2xl text-muted-foreground mb-8'
+					className='text-xl md:text-2xl mb-8 text-amber-200'
 				>
 					Explore the neon-lit streets of Vice City, find the perfect
 					ride, and audit your PC specs
 				</motion.p>
+
+				{/* Animated Countdown: Main Release */}
+				<motion.div
+					variants={flipVariants}
+					className='mb-8 flex justify-center'
+				>
+					<Countdown
+						label='GTA VI Release Date Countdown'
+						date='2026-11-19T00:00:00Z'
+						size='big'
+					/>
+				</motion.div>
+
+				{/* Animated Countdown: Trailer Drop */}
+				<motion.div
+					variants={flipVariants}
+					className='mb-4 flex justify-center'
+				>
+					<Countdown
+						label='Trailer 2 Drop Countdown'
+						date='2026-04-15T00:00:00Z'
+						size='small'
+					/>
+				</motion.div>
 
 				{/* CTA Buttons */}
 				<motion.div
