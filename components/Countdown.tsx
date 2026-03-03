@@ -36,8 +36,8 @@ function TimeBlock({
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'center',
-				minWidth: size === 'big' ? 120 : 60,
-				padding: size === 'big' ? '0.5rem' : '0.25rem',
+				minWidth: size === 'big' ? 'clamp(50px, 12vw, 120px)' : 'clamp(40px, 8vw, 60px)',
+				padding: size === 'big' ? 'clamp(0.25rem, 2vw, 0.5rem)' : 'clamp(0.15rem, 1vw, 0.25rem)',
 			}}
 		>
 			<FlipNumber
@@ -46,9 +46,9 @@ function TimeBlock({
 			/>
 			<span
 				style={{
-					fontSize: size === 'big' ? '1.5rem' : '0.8rem',
-					color: '#fff', // White label
-					marginTop: 8,
+					fontSize: size === 'big' ? 'clamp(0.8rem, 2.5vw, 1.5rem)' : 'clamp(0.5rem, 1.5vw, 0.8rem)',
+					color: '#fff',
+					marginTop: 'clamp(4px, 1vw, 8px)',
 					fontWeight: 700,
 					letterSpacing: '0.05em',
 				}}
@@ -82,11 +82,11 @@ export default function Countdown({
 	return (
 		<div
 			style={{
-				fontSize: size === 'big' ? '2.5rem' : '1.2rem',
+				fontSize: size === 'big' ? 'clamp(1.2rem, 4vw, 2.5rem)' : 'clamp(0.8rem, 2.5vw, 1.2rem)',
 				fontWeight: 900,
 				letterSpacing: '0.1em',
-				marginBottom: '0.5rem',
-				color: '#fff', // White label
+				marginBottom: 'clamp(0.25rem, 1vw, 0.5rem)',
+				color: '#fff',
 				textAlign: 'center',
 			}}
 		>
@@ -94,8 +94,9 @@ export default function Countdown({
 			<div
 				style={{
 					display: 'flex',
-					gap: size === 'big' ? '1.5rem' : '0.5rem',
+					gap: size === 'big' ? 'clamp(0.5rem, 2vw, 1.5rem)' : 'clamp(0.3rem, 1.5vw, 0.5rem)',
 					justifyContent: 'center',
+					flexWrap: 'wrap',
 				}}
 			>
 				<TimeBlock

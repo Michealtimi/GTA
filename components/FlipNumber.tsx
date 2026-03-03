@@ -22,15 +22,16 @@ export default function FlipNumber({
 		}
 	}, [value, prev]);
 
-	const fontSize = size === 'big' ? '4rem' : '2rem';
-	const boxSize = size === 'big' ? 100 : 50;
+	const fontSize = size === 'big' ? 'clamp(2rem, 6vw, 4rem)' : 'clamp(1rem, 4vw, 2rem)';
+	const boxSize = size === 'big' ? 'clamp(60px, 15vw, 100px)' : 'clamp(35px, 8vw, 50px)';
+	const boxHeight = size === 'big' ? 'clamp(72px, 18vw, 120px)' : 'clamp(42px, 9.6vw, 60px)';
 	const padding = size === 'big' ? '0.5em 0.3em' : '0.2em 0.1em';
 
 	return (
 		<div
 			style={{
 				width: boxSize,
-				height: boxSize * 1.2,
+				height: boxHeight,
 				display: 'flex',
 				alignItems: 'center',
 				justifyContent: 'center',

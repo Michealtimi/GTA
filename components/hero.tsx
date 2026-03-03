@@ -96,7 +96,7 @@ const Hero = () => {
 				{/* Main heading and subtitle above timers */}
 				<motion.h1
 					variants={itemVariants}
-					className='text-6xl md:text-7xl font-bold mb-6'
+				className='text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6'
 				>
 					<span
 						className='text-glow'
@@ -114,7 +114,7 @@ const Hero = () => {
 
 				<motion.p
 					variants={itemVariants}
-					className='text-xl md:text-2xl mb-8 text-amber-200'
+				className='text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-amber-200'
 				>
 					Explore the neon-lit streets of Vice City, find the perfect
 					ride, and audit your PC specs
@@ -123,7 +123,7 @@ const Hero = () => {
 				{/* Animated Countdown: Main Release */}
 				<motion.div
 					variants={flipVariants}
-					className='mb-8 flex justify-center'
+					className='mb-6 sm:mb-8 flex justify-center px-4 sm:px-0'
 				>
 					<Countdown
 						label='GTA VI Release Date Countdown'
@@ -135,7 +135,7 @@ const Hero = () => {
 				{/* Animated Countdown: Trailer Drop */}
 				<motion.div
 					variants={flipVariants}
-					className='mb-4 flex justify-center'
+					className='mb-4 flex justify-center px-4 sm:px-0'
 				>
 					<Countdown
 						label='Trailer 2 Drop Countdown'
@@ -147,7 +147,7 @@ const Hero = () => {
 				{/* CTA Buttons */}
 				<motion.div
 					variants={itemVariants}
-					className='flex flex-col sm:flex-row gap-4 justify-center items-center'
+				className='flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 sm:px-0'
 				>
 					<button
 						type='button'

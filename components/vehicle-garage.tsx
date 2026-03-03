@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useMemo, useEffect, useRef } from 'react';
+import AdSlot from './AdSlot';
+import AdsenseSlot from './adsense-slot'; // auto-ads component (use wherever you want an ad)
 import { useToast } from '@/hooks/use-toast';
 import { motion } from 'framer-motion';
 import { Vehicle } from '@/lib/vehicles';
@@ -76,18 +78,17 @@ export default function VehicleGarage() {
 	return (
 		<section
 			id='garage'
-			className='relative py-20 px-6'
+			className='relative py-12 sm:py-16 md:py-20 px-4 sm:px-6'
 		>
+			{/* Example using the auto-ads component instead of a manual slot. In
+			    adsense-slot.tsx replace YOUR_SIDEBAR_SLOT_ID with your real unit id.
+			    This will render a responsive ad that adapts to the available space. */}
 			<div className='adspace-top mb-8 flex justify-center'>
-				{/* AdSense script goes here */}
-				<div
-					id='adsense-top'
-					style={{ minHeight: 90, minWidth: 728 }}
-				/>
+				<AdsenseSlot />
 			</div>
 
-			<section className='about-leonida mt-16 bg-background rounded-lg p-6 shadow-lg'>
-				<h2 className='text-3xl font-bold mb-4'>
+			<section className='about-leonida mt-8 sm:mt-12 lg:mt-16 bg-background rounded-lg p-4 sm:p-6 shadow-lg'>
+				<h2 className='text-2xl sm:text-3xl font-bold mb-3 sm:mb-4'>
 					About Leonida: GTA VI, Hardware Requirements & Vice City
 					History
 				</h2>
@@ -137,12 +138,9 @@ export default function VehicleGarage() {
 					most advanced open world ever created.
 				</article>
 			</section>
-			<div className='adspace-bottom mt-8 flex justify-center'>
-				{/* AdSense script goes here */}
-				<div
-					id='adsense-bottom'
-					style={{ minHeight: 90, minWidth: 728 }}
-				/>
+			<div className='adspace-bottom mt-12 flex justify-center'>
+				{/* Another slot - plug a second slot ID here if desired. */}
+				<AdSlot slot="BOTTOM_SLOT_ID" style={{ minHeight: 90, width: '100%' }} />
 			</div>
 			<div className='absolute inset-0 grid-pattern opacity-10' />
 			<div className='absolute inset-0 scan-lines opacity-20' />
@@ -153,12 +151,12 @@ export default function VehicleGarage() {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
-					className='mb-12 text-center'
+					className='mt-6 mb-8 sm:mb-12 text-center'
 				>
-					<h2 className='text-5xl font-bold mb-4'>
+					<h2 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4'>
 						<span className='text-glow'>Vice City Garage</span>
 					</h2>
-					<p className='text-muted-foreground text-lg'>
+					<p className='text-sm sm:text-base md:text-lg text-muted-foreground'>
 						Explore the finest collection of vehicles in Vice City
 					</p>
 				</motion.div>

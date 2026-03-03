@@ -75,7 +75,7 @@ export function PCAudit({ hardware }: PCAuditProps) {
 	return (
 		<section
 			id='audit'
-			className='relative py-20 px-6'
+			className='relative py-12 sm:py-16 md:py-20 px-4 sm:px-6'
 		>
 			<div className='absolute inset-0 grid-pattern opacity-10' />
 			<div className='absolute inset-0 scan-lines opacity-20' />
@@ -87,14 +87,14 @@ export function PCAudit({ hardware }: PCAuditProps) {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
-					className='mb-12 text-center'
+					className='mb-8 sm:mb-12 text-center'
 				>
-					<h2 className='text-5xl font-bold mb-4'>
+					<h2 className='text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4'>
 						<span className='text-glow-purple'>
 							PC Audit System
 						</span>
 					</h2>
-					<p className='text-muted-foreground text-lg'>
+					<p className='text-sm sm:text-base md:text-lg text-muted-foreground'>
 						Check if your rig can handle Vice City in all its glory
 					</p>
 				</motion.div>
@@ -105,7 +105,7 @@ export function PCAudit({ hardware }: PCAuditProps) {
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.1 }}
 					viewport={{ once: true }}
-					className='glass-effect rounded-xl p-8 mb-8'
+					className='glass-effect rounded-lg sm:rounded-xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8'
 				>
 					<form
 						onSubmit={handleSubmit}
