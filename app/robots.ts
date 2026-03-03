@@ -1,7 +1,6 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  // Hardcode the base URL for the GTA project to avoid the Vercel URL trap
   const baseUrl = 'https://gta.logik.website';
 
   return {
@@ -11,14 +10,15 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
       {
-        userAgent: 'GPTBot',
+        userAgent: 'GPTBot', // Friendly invite for ChatGPT
         allow: '/',
       },
       {
-        userAgent: 'Googlebot',
+        userAgent: 'Googlebot', // Red carpet for Google
         allow: '/',
       },
     ],
+    // This is the most important line!
     sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
